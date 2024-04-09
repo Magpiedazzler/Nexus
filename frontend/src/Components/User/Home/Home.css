@@ -1,0 +1,128 @@
+.div2{
+    padding-left:16px;
+}
+.topnav {
+overflow: hidden;
+background-color: #333;
+height: 80px;
+}
+#t2{
+    color: white;
+    position: relative;
+    left: 20px;
+    font-size: 32px;
+    top: 20px;
+}
+#search{
+    margin-left: 450px;
+    width: 500px;
+    height: 40px;
+    border-radius: 20px;
+    position: relative;
+    top: -40px;
+    font-size: 16px;
+    background-color: #fcfafa9a;
+    color: black;
+}
+#searchicon{
+    position: relative;
+    left: -45px;
+    top: -37px;
+    background-color: transparent;
+    border: none;
+    font-size: 25px;
+    color: black;
+}
+#filter{
+    position: relative;
+    left: 0px;
+    top: -37px;
+    background-color: #979ca4;
+    font-size: 16px;
+    border-radius: 10px;
+    width: 150px;
+    height: 35px;
+    font-size: 18px;
+    color: #31363F;
+}
+#filter option{
+    color: #31363F;
+}
+#profileicon{
+    position: relative;
+    left: 300px;
+    top: -30px;
+    background-color: transparent;
+    border: none;
+    font-size: 30px;
+    color: white;
+}
+
+#hm,#ap,#gm,#lb,#hp{
+    height: 60px;
+    width: 60px;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    top: 40px;
+    left: -70px;
+    font-size: 16px;
+    background-color: transparent;
+    border: none;
+    color: #222831;
+}
+#ap{
+    top: 60px;
+}
+#gm{
+    top: 80px;
+}
+#lb{
+    top: 260px;
+}
+#hp{
+    top: 290px;
+}
+#menu{
+    border-left: 2px solid black;
+    width: 1290px;
+    height: 620px;
+    margin-top: 20px;
+    margin-left: -630px;
+}
+
+#sub{
+    height: 400px;
+    width: 1000px;
+    position: relative;
+    top: 20px;
+    left: 130px;
+
+}
+#home,#app,#game,#library,#help{
+    font-size: 20px;
+    font-style: normal;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+#hdiv{
+    width: 18rem;
+    position: relative;
+    top: 50px;
+    background-color: #31363f8f;
+    color: #EEEEEE;
+    margin-left: 20px;
+}
+#ha{
+    width: 100px;
+    background-color: #EEEEEE;
+    color: #31363F;
+    font-weight: bold;
+    position: relative;
+    left: 150px;
+}
+#ha:hover{
+    background-color: #31363F;
+    color: #EEEEEE;
+    box-shadow: 2px 3px 4px #31363F;
+}
+
