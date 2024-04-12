@@ -52,6 +52,9 @@
 #crt{
     color: white;
     position: relative;
-    top: 25px;
+    top: 35px;
     left: 215px;
+}
+#crt:hover{
+    color: blue;
 }

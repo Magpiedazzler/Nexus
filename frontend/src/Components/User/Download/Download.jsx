@@ -5,26 +5,11 @@ import './Download.css'
 export default function Download() {
   return (
     <div>
-      <div class="topnav">
-            <h2 id='t2'>Nexus</h2>
-            <input type="text" id='search' placeholder='Search..'/>
-            <button id='searchicon'><i class="bi bi-search" id='search1'></i></button>
-            <button id='notification'><i class="bi bi-bell" id='notify'></i></button>
-            <button id='profileicon'><i class="bi bi-person-circle" id='profile'></i></button>
-        </div>
-        
-        <div class="div2">
+      <div class="div2" id='div2'>
     <section>
         <div className="container">
             <div className="row">
-                <div className="col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
-                <button id="hm"><i class="bi bi-house"id='home'>Home</i><br /><br /></button>
-                <button id="ap"><i class="bi bi-app"id='app'>Apps</i><br /><br /></button>
-                <button id="gm"><i class="bi bi-controller" id='game'>Games</i><br /><br /></button>
-                <button id="lb"><i class="bi bi-collection"id='library'>Library</i><br /><br /></button>
-                <button id="hp"><i class="bi bi-patch-question" id='help'>Help</i><br /><br /></button>
-                </div>
-                <div className="col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3" id='second_div'>
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6" id='second_div'>
                     <div align='center'>
                         <img src={imageOne} alt="Sample app icon" id='img1'/>
                     </div><br />
@@ -52,7 +37,7 @@ export default function Download() {
                         <button id='btn3' align='center'><i class="bi bi-flag" id='flag'></i>Report app</button>
                     </div>
                 </div>
-                <div className="col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3" id='third_div'>
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6" id='third_div'>
                     <div align='center' id='subdiv2'>
                         <h4 id='divh'>Screen Shots</h4><br /><hr id='imghr'/><br />
                         <img src="" alt="Sample screen shots" id='img2'/>
@@ -65,7 +50,7 @@ export default function Download() {
                         <h4 id='divh2'>Rating & Reviews</h4><br /><hr id='deschr'/><br />
                         <p>
                             <input id='inp' type="text" value={'Username'} readOnly/><br/><br />
-                            <input id='inp' type="text" value={<i class="bi bi-star"></i>} readOnly/><br/><br />
+                            <input id='inp2' type="text" value={'4'} readOnly/><i class="bi bi-star" id='inp2'></i><br/><br />
                             <textarea id='inp1' name="" cols="30" rows="5" value={'description'} readOnly></textarea>
                         </p>
                     </div>
@@ -86,7 +71,6 @@ export default function Download() {
                         <p></p>
                     </div>
                 </div>
-                <div className="col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3" id='fourth_div'></div>
             </div>
         </div>
     </section>

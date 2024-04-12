@@ -1,9 +1,6 @@
-#rmenu{
-    border-left: 2px solid black;
-    width: 1290px;
-    height: 620px;
-    margin-top: 20px;
-    margin-left: -630px;
+#rh{
+    position: relative;
+    left: 30px;
 }
 #rbox{
     background-color: #31363f90;
@@ -63,4 +60,8 @@
 #rbtn:hover{
     background-color: #31363F;
     color: #EEEEEE;
+}
+#img1{
+    height: 100px;
+    width: 100px;
 }

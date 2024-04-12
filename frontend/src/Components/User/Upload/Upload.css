@@ -1,25 +1,16 @@
-#notification{
-    position: relative;
-    top: -30px;
-    left: 250px;
-    background-color: transparent;
-    font-size: 28px;
-    color: white;
-    border: none;
-}
-#menu2{
-    border-left: 2px solid black;
-    height: auto;
-    margin-top: 20px;
-    margin-left: -630px;
-}
 #uh{
     font-weight: bold;
+    position: relative;
+    left: 50px;
 }
 #form3{
     position: relative;
-    left: 50px;
+    left: 100px;
     top: 40px;
+    background-color: #31363f8f;
+    width: 1200px;
+    border-radius: 5px;
+    color: #EEEEEE;
 }
 #hr1_1{
     position: relative;

@@ -1,18 +1,12 @@
-#fcmenu{
-    border-left: 2px solid black;
-    width: 1290px;
-    height: 820px;
-    margin-top: 20px;
-    margin-left: -630px;
-}
 #fcbox{
     background-color: #31363f74;
     position: relative;
-    left: 60px;
+    left: 40px;
     top: 20px;
     border-radius: 10px;
     color: #EEEEEE;
     height: 650px;
+    width: 1250px;
     bottom: 10px;
 }
 #fcl{

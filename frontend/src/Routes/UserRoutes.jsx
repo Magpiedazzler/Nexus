@@ -1,44 +1,30 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
-import Signup from '../Components/User/Signup/Signup'
-import Signin from '../Components/User/Signin/Signin'
-import Home from '../Components/User/Home/Home'
-import Feedback from '../Components/User/Feedback/Feedback'
-import Upload from '../Components/User/Upload/Upload'
-import Download from '../Components/User/Download/Download'
-import Report from '../Components/User/Report/Report'
-import App from '../Components/User/Apps/App'
-import Games from '../Components/User/Games/Games'
+import HomePage from '../Pages/User/HomePage'
+import Registration from '../Pages/User/Registration'
+import LoginPage from '../Pages/User/LoginPage'
+import ApplicationPage from '../Pages/User/ApplicationPage'
+import GamePage from '../Pages/User/GamePage'
+import DownloadPage from '../Pages/User/DownloadPage'
+import FeedbackPage from '../Pages/User/FeedbackPage'
+import UploadPage from '../Pages/User/UploadPage'
+import ReportPage from '../Pages/User/ReportPage'
+import LibraryPage from '../Pages/User/LibraryPage'
 
 function UserRoutes() {
   return (
     <div>
       <Routes>
-        <Route path='/register' element={<Signup/>}/>
-      </Routes>
-      <Routes>
-        <Route path='/login' element={<Signin/>}/>
-      </Routes>
-      <Routes>
-        <Route path='/home' element={<Home/>}/>
-      </Routes>
-      <Routes>
-        <Route path='/feedback' element={<Feedback/>}/>
-      </Routes>
-      <Routes>
-        <Route path='/upload' element={<Upload/>}/>
-      </Routes>
-      <Routes>
-        <Route path='/install' element={<Download/>}/>
-      </Routes>
-      <Routes>
-        <Route path='/report' element={<Report/>}/>
-      </Routes>
-      <Routes>
-        <Route path='/apps' element={<App/>}/>
-      </Routes>
-      <Routes>
-        <Route path='/games' element={<Games/>}/>
+        <Route path='/register' element={<Registration/>}/>
+        <Route path='/home' element={<HomePage/>}/>
+        <Route path='/login' element={<LoginPage/>}/>
+        <Route path='/apps' element={<ApplicationPage/>}/>
+        <Route path='/games' element={<GamePage/>}/>
+        <Route path='/install' element={<DownloadPage/>}/>
+        <Route path='/feedback' element={<FeedbackPage/>}/>
+        <Route path='/upload' element={<UploadPage/>}/>
+        <Route path='/report' element={<ReportPage/>}/>
+        <Route path='/library' element={<LibraryPage/>}/>
       </Routes>
     </div>
   )

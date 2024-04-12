@@ -1,35 +1,14 @@
 import React from 'react'
-import './App.css'
+import "./Applications.css"
 
-export default function App() {
+export default function Applications() {
   return (
     <div>
-      <div class="topnav">
-            <h2 id='t2'>Nexus</h2>
-            <input type="text" id='search' placeholder='Search..'/>
-            <button id='searchicon'><i class="bi bi-search" id='search1'></i></button>
-            <select name="" id="filter">
-                <option value="">Choose OS</option>
-                <option value="">Windows</option>
-                <option value="">Linux</option>
-                <option value="">Mac</option>
-            </select>
-            <button id='notification'><i class="bi bi-bell" id='notify'></i></button>
-            <button id='profileicon'><i class="bi bi-person-circle" id='profile'></i></button>
-        </div>
         
-        <div class="div2">
+        <div class="div2" id='div2'>
     <section>
         <div class="container">
             <div class="row">
-                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
-                <button id="hm"><i class="bi bi-house"id='home'>Home</i><br /><br /></button>
-                <button id="ap"><i class="bi bi-app"id='app'>Apps</i><br /><br /></button>
-                <button id="gm"><i class="bi bi-controller" id='game'>Games</i><br /><br /></button>
-                <button id="lb"><i class="bi bi-collection"id='library'>Library</i><br /><br /></button>
-                <button id="hp"><i class="bi bi-patch-question" id='help'>Help</i><br /><br /></button>
-                </div>
-                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6" id="menu">
                     <div id="carouselExampleIndicators" class="carousel slide">
                         <div class="carousel-indicators" id=''>
                             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -38,13 +17,13 @@ export default function App() {
                         </div>
                         <div class="carousel-inner" id='sub'>
                             <div class="carousel-item active">
-                            <img src={imageOne} class="d-block w-100" alt="First"/>
+                            <img src="" class="d-block w-100" alt="First"/>
                             </div>
                             <div class="carousel-item">
-                            <img src={imageOne} class="d-block w-100" alt="Second"/>
+                            <img src="" class="d-block w-100" alt="Second"/>
                             </div>
                             <div class="carousel-item">
-                            <img src={imageOne} class="d-block w-100" alt="Third"/>
+                            <img src="" class="d-block w-100" alt="Third"/>
                             </div>
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -57,14 +36,13 @@ export default function App() {
                         </button>
                     </div>
                     <div class="card" id='hdiv'>
-                        <img src="..." class="card-img-top" alt="..."/>
+                        <img src="" id='himg' class="card-img-top" alt="..."/>
                         <div class="card-body">
-                            <h5 class="card-title">App Name</h5>
+                            <h5 class="card-title" id='hh'>App Name</h5><br />
                             <p class="card-text">ratings</p>
-                            <a href="#" class="btn btn-primary" id='ha'>Get</a>
+                            <button id='hb'><i class="bi bi-download" id='hi'></i>Download</button>
                         </div>
                     </div>
-                </div>
             </div>
         </div>
     </section>

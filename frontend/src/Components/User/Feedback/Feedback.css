@@ -1,14 +1,17 @@
 #f2{
-    background-color: transparent;
+    background-color: #31363f88;
+    width: 1200px;
+    border-radius: 5px;
     margin-top: 20px;
     position: relative;
-    left: 50px;
+    left: 80px;
     text-align: center;
+    color: #EEEEEE;
 }
 #fh{
     font-weight: bold;
     position: relative;
-    left: -40px;
+    left: 40px;
     text-align: left;
 }
 #fp1{
@@ -91,7 +94,7 @@
 }
 #ft1{
     position: relative;
-    left: 0px;
+    left: -250px;
     top: -80px;
     width: 680px;
     height: 100px;
@@ -106,7 +109,7 @@
     border-radius: 10px;
     background-color: #31363F;
     color: #EEEEEE;
-    left: 250px;
+    left: -40px;
 }
 #fb9:hover{
     background-color: #EEEEEE;
