@@ -47,8 +47,12 @@
 }
 .dropdown-menu li{
     margin-top: 10px;
+    color: #EEEEEE;
 }
 .dropdown-menu li:hover{
     background-color: #eeeeee;
     color: #222831; 
+}
+#link{
+    text-decoration: none;
 }

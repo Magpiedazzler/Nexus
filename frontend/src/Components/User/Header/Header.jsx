@@ -1,5 +1,6 @@
 import React from 'react'
 import './Header.css'
+import {Link} from 'react-router-dom'
 
 export default function Header() {
   return (
@@ -38,7 +39,7 @@ export default function Header() {
                             <li><a class="dropdown-item" href="#">Email</a></li>
                             <li><a class="dropdown-item" href="#">Sign out</a></li>
                             <li><hr class="dropdown-divider" id='underline'/></li>
-                            <li><a class="dropdown-item" href="#">Additional info</a></li>
+                            <Link to='../profile'id='link'><li><a class="dropdown-item" href="#">View Profile</a></li></Link>
                         </ul>
                     </div>
             </div>

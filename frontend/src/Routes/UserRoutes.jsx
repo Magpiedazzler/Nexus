@@ -10,6 +10,9 @@ import FeedbackPage from '../Pages/User/FeedbackPage'
 import UploadPage from '../Pages/User/UploadPage'
 import ReportPage from '../Pages/User/ReportPage'
 import LibraryPage from '../Pages/User/LibraryPage'
+import ProfilePage from '../Pages/User/ProfilePage'
+import EditProfilePage from '../Pages/User/EditProfilePage'
+import AdminUserinfo from '../Pages/Admin/AdminUserinfo'
 
 function UserRoutes() {
   return (
@@ -25,6 +28,8 @@ function UserRoutes() {
         <Route path='/upload' element={<UploadPage/>}/>
         <Route path='/report' element={<ReportPage/>}/>
         <Route path='/library' element={<LibraryPage/>}/>
+        <Route path='/profile' element={<ProfilePage/>}/>
+        <Route path='/edit_profile' element={<EditProfilePage/>}/>
       </Routes>
     </div>
   )

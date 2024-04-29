@@ -29,7 +29,7 @@ export default function AdminHeader() {
                         </li>
                         </ul>
                     </div>
-                    <div class="dropdown">
+                    <div class="dropdown" id='animation'>
                         <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id='profileicon'>
                         <i class="bi bi-person-circle" id='profile'></i>
                         </button>
@@ -38,7 +38,7 @@ export default function AdminHeader() {
                             <li><a class="dropdown-item" href="#">Email</a></li>
                             <li><a class="dropdown-item" href="#">Sign out</a></li>
                             <li><hr class="dropdown-divider" id='underline'/></li>
-                            <li><a class="dropdown-item" href="#">Additional info</a></li>
+                            <li><a class="dropdown-item" href="#">View Profile</a></li>
                         </ul>
                     </div>
             </div>
