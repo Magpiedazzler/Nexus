@@ -29,6 +29,7 @@ import AdminWindowsAppinfo from "./Pages/Admin/AdminWindowsAppinfo";
 import UserRoutes from "./Routes/UserRoutes"
 import AdminRoutes from "./Routes/AdminRoutes"
 import {BrowserRouter,Routes,Route} from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
   <Route path="/*" element={<UserRoutes/>}/>
   <Route path="/admin/*" element={<AdminRoutes/>}/>
   </Routes>
+  <ToastContainer/>
   </BrowserRouter>
     </div>
   );

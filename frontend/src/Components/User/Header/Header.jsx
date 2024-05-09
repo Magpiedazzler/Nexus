@@ -1,8 +1,41 @@
-import React from 'react'
+import React,{useEffect,useState} from 'react'
 import './Header.css'
 import {Link} from 'react-router-dom'
+//import {userHeader} from '../../../Services/userApi'
+import { useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
+import { setUserDetails } from '../../../Features/setUser'
+
 
 export default function Header() {
+
+    const navigate=useNavigate();
+    const dispatch=useDispatch();
+    const [data,setData]=useState({})
+
+    const userLogOut=()=>{
+        localStorage.removeItem("jwt")
+        dispatch(setUserDetails(""));
+        navigate("/login");
+    };
+
+    // useEffect(()=>{
+    //     userHeader().then((response)=>{
+    //         console.log(response)
+    //         if(response.data.status){
+    //             setData(response.data.user)
+    //             dispatch(setUserDetails(response.data.user));
+    //         }
+    //     });
+    // },[]);
+
+    const handleLoginClick=()=>{
+        navigate("/login");
+    };
+
+    const handleSignupClick=()=>{
+        navigate("/signup");
+    };
   return (
     <div>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -35,9 +68,9 @@ export default function Header() {
                         <i class="bi bi-person-circle" id='profile'></i>
                         </button>
                         <ul class="dropdown-menu dropdown-menu-dark" id='profile_details'>
-                            <li><a class="dropdown-item active" href="#">Name</a></li>
-                            <li><a class="dropdown-item" href="#">Email</a></li>
-                            <li><a class="dropdown-item" href="#">Sign out</a></li>
+                            <li><a class="dropdown-item active" href="#">{data?.username}</a></li>
+                            <li><a class="dropdown-item" href="#">Email</a>{data?.email}</li>
+                            <li><button class="dropdown-item" onClick={()=>userLogOut()}>Sign out</button></li>
                             <li><hr class="dropdown-divider" id='underline'/></li>
                             <Link to='../profile'id='link'><li><a class="dropdown-item" href="#">View Profile</a></li></Link>
                         </ul>

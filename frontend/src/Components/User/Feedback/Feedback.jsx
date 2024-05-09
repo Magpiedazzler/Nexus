@@ -13,11 +13,14 @@ export default function Feedback() {
                         <form action="" id='f2'>
                         <p id='fp1'>We would like your feedback to improve our service</p><br/>
                         <p id='fp2'>What is your opinion about Nexus</p><br />
+                        <div id='feedback-buttons'>
                         <button id='fb1'><i class="bi bi-emoji-tear"></i></button>
                         <button id='fb2'><i class="bi bi-emoji-frown"></i></button>
                         <button id='fb3'><i class="bi bi-emoji-neutral"></i></button>
                         <button id='fb4'><i class="bi bi-emoji-smile"></i></button>
-                        <button id='fb5'><i class="bi bi-emoji-laughing"></i></button><br /><br />
+                        <button id='fb5'><i class="bi bi-emoji-laughing"></i></button>
+                        </div>
+                        <br /><br />
                         <p id='fp3'>Select the feedback category</p><br />
                         <div id='d2'>
                             <button id='fb6'>Compliment</button>

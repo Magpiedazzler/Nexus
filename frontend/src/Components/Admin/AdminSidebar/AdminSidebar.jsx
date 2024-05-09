@@ -16,7 +16,7 @@ export default function AdminSidebar() {
                             <Link to={'../library'} id='link'><button id="lb"><i class="bi bi-collection"id='library'>Library</i><br /><br /></button></Link>
                             <div class="btn-group dropend">
                                 <button id='hp' type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <i class="bi bi-patch-question" id='help'><br />Help</i><br /><br />
+                                <i class="bi bi-three-dots" id='more'><br />More</i><br /><br />
                                 </button>
                                 <ul class="dropdown-menu">
                                 <Link to={'../app_management'} id='link'><li><i class="bi bi-gear-wide-connected" id='i1'></i>App Hub</li></Link>

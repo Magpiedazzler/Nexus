@@ -3,7 +3,7 @@
     margin-top: 60px;
     background-color: #222831b2;
     width: 500px;
-    height: 600px;
+    height: 700px;
     box-shadow: 2px 3px 4px;
 }
 #h1{
@@ -42,6 +42,7 @@ hr{
     top: 40px;
     left: 170px;
     font-weight: bold;
+    text-align: center;
 }
 #btn:hover{
     background-color: #EEEEEE;

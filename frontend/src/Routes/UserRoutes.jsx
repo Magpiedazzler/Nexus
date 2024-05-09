@@ -12,14 +12,13 @@ import ReportPage from '../Pages/User/ReportPage'
 import LibraryPage from '../Pages/User/LibraryPage'
 import ProfilePage from '../Pages/User/ProfilePage'
 import EditProfilePage from '../Pages/User/EditProfilePage'
-import AdminUserinfo from '../Pages/Admin/AdminUserinfo'
 
 function UserRoutes() {
   return (
     <div>
       <Routes>
         <Route path='/register' element={<Registration/>}/>
-        <Route path='/home' element={<HomePage/>}/>
+        <Route path='/' element={<HomePage/>}/>
         <Route path='/login' element={<LoginPage/>}/>
         <Route path='/apps' element={<ApplicationPage/>}/>
         <Route path='/games' element={<GamePage/>}/>

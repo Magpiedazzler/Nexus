@@ -50,22 +50,37 @@
 #ep1,#epbio{
     width: 600px;
 }
-#epbtn{
-    display: none;
-}
-#epbtnlabel{
-    margin-left: 40px;
+
+#uploadButton{
     display: inline-block;
-    padding: 10px 20px;
-    background: linear-gradient(90deg, rgba(0,1,255,1) 0%, rgba(9,17,121,1) 50%, rgba(2,0,36,1) 100%);
-    color: #fff;
-    border: none;
-    border-radius: 5px;
+    position: relative;
+}
+#upbtn-label {
+    display: inline-block;
+    padding: 8px 20px;
+    background:linear-gradient(90deg, rgba(0,1,255,1) 0%, rgba(9,17,121,1) 50%, rgba(2,0,36,1) 100%); /* Example background color */
+    color: #fff; /* Text color */
+    border-radius: 4px;
     cursor: pointer;
-}
-#epbtnlabel:hover{
+    position: relative;
+    left: 30px;
+    top: -20px;
+  }
+  
+#upbtn-label:hover {
     box-shadow: 2px 3px 4px black;
-}
+  }
+  
+  #epbtn {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+  }
+
 #button{
     position: relative;
     left: 350px;

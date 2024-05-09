@@ -7,6 +7,8 @@
     border-radius: 5px;
     margin-left: 40px;
     margin-top: 40px;
+    margin-right: 40px;
+    width: 1250px;
 }
 #rtext,#rt,#rs,#img1,#rbtn{
     position: relative;
