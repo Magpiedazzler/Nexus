@@ -10,6 +10,7 @@ import ReportPage from "./Pages/User/ReportPage";
 import LibraryPage from "./Pages/User/LibraryPage";
 import ProfilePage from "./Pages/User/ProfilePage";
 import EditProfilePage from "./Pages/User/EditProfilePage";
+import AdminLoginPage from "./Pages/Admin/AdminLoginPage";
 import AdminHomePage from "./Pages/Admin/AdminHomePage";
 import AdminAppManagementPage from "./Pages/Admin/AdminAppManagementPage";
 import AdminCompliantPage from "./Pages/Admin/AdminCompliantPage";
@@ -26,6 +27,7 @@ import AdminUtilityAppinfo from "./Pages/Admin/AdminUtilityAppinfo";
 import AdminLinuxAppinfo from "./Pages/Admin/AdminLinuxAppinfo";
 import AdminMacAppinfo from "./Pages/Admin/AdminMacAppinfo";
 import AdminWindowsAppinfo from "./Pages/Admin/AdminWindowsAppinfo";
+import AdminNotification from "./Components/Admin/AdminNotification/AdminNotification";
 import UserRoutes from "./Routes/UserRoutes"
 import AdminRoutes from "./Routes/AdminRoutes"
 import {BrowserRouter,Routes,Route} from "react-router-dom";

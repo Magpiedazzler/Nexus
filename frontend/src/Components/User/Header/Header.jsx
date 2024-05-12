@@ -69,8 +69,8 @@ export default function Header() {
                         </button>
                         <ul class="dropdown-menu dropdown-menu-dark" id='profile_details'>
                             <li><a class="dropdown-item active" href="#">{data?.username}</a></li>
-                            <li><a class="dropdown-item" href="#">Email</a>{data?.email}</li>
-                            <li><button class="dropdown-item" onClick={()=>userLogOut()}>Sign out</button></li>
+                            <li><a class="dropdown-item" href="#">{data?.email}</a></li>
+                            <Link to='../login'id='link'><li><button class="dropdown-item" onClick={()=>userLogOut()}>Sign out</button></li></Link>
                             <li><hr class="dropdown-divider" id='underline'/></li>
                             <Link to='../profile'id='link'><li><a class="dropdown-item" href="#">View Profile</a></li></Link>
                         </ul>

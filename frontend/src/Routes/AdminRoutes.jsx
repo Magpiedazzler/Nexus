@@ -16,6 +16,8 @@ import AdminLinuxAppinfo from '../Pages/Admin/AdminLinuxAppinfo'
 import AdminMacAppinfo from '../Pages/Admin/AdminMacAppinfo'
 import AdminWindowsAppinfo from '../Pages/Admin/AdminWindowsAppinfo'
 import AdminLibrarypage from '../Pages/Admin/AdminLibrarypage'
+import AdminLoginPage from '../Pages/Admin/AdminLoginPage'
+import AdminNotification from '../Components/Admin/AdminNotification/AdminNotification'
 
 export default function AdminRoutes() {
   return (
@@ -37,6 +39,8 @@ export default function AdminRoutes() {
         <Route path='/linuxapp_details' element={<AdminLinuxAppinfo/>}/>
         <Route path='/macapp_details' element={<AdminMacAppinfo/>}/>
         <Route path='/windowsapp_details' element={<AdminWindowsAppinfo/>}/>
+        <Route path='/adlogin' element={<AdminLoginPage/>}/>
+        <Route path='/not' element={<AdminNotification/>}/>
       </Routes>
     </div>
   )

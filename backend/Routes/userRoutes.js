@@ -1,7 +1,10 @@
 //const { default: Header } = require("../../frontend/src/Components/User/Header/Header")
-const {register, login}=require("../Controllers/userController")
+const {register, login,appUpload}=require("../Controllers/userController")
+//const userAuth=require("../Middleware/userAuth")
+const createMulterInstance=require("../Middleware/multer")
 const express=require("express")
 const router=express.Router()
+const appDetails=createMulterInstance("AppDetails")
 
 router.post('/register',register)
 router.post('/login',login)

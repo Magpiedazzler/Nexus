@@ -67,9 +67,9 @@
     top: -20px;
   }
   
-#upbtn-label:hover {
+/* #upbtn-label:hover {
     box-shadow: 2px 3px 4px black;
-  }
+  } */
   
   #epbtn {
     opacity: 0;

@@ -163,33 +163,34 @@ export default function Upload() {
                         </div>
                         <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6" id='basic1'>
                           <h3>Upload files</h3><br /><br />
-                          <div id="uploadButtons">
-                            <input type="file"  name='appicon' id='upbtn'
+                          <label id='upbtn-label1'>Upload app icon </label><br />
+                          <div className="uploadButtons">
+                            <input type="file"  name='appicon' id='upbtn1'
                             onChange={(event)=>formik.setFieldValue("appicon",event.currentTarget.files[0])}
                             onBlur={formik.handleBlur}/><br /><br />
-                            <div id='upbtn-label'>Choose app Icon</div>
                             {formik.touched.appicon && formik.errors.appicon ?(
                                 <p className='text-danger errorMsg' style={{fontSize:"12px",margin:"0px",position:"relative",top:"0px"}}>
                                   {formik.errors.appicon}
                                 </p>
                               ):null}
                           </div><br />
-                          <div id='uploadButtons'>
-                            <input type="file" name='screenshots' id='upbtn'
+                          <label id='upbtn-label1'>upload sample screenshots</label><br />
+                          <div className='uploadButtons'>
+                            <input type="file" name='screenshots' id='upbtn2'
                             onChange={(event)=>formik.setFieldValue("screenshots",event.currentTarget.files[0])}
                             onBlur={formik.handleBlur}/><br /><br />
-                            <div id='upbtn-label'>Upload sample screenshots</div>
                             {formik.touched.screenshots && formik.errors.screenshots ?(
                                 <p className='text-danger errorMsg' style={{fontSize:"12px",margin:"0px",position:"relative",top:"0px"}}>
                                   {formik.errors.screenshots}
                                 </p>
                               ):null}
                           </div><br />
-                          <div id='uploadButtons'>
-                            <input type="file" name='appfile' id='upbtn'
+                          <label id='upbtn-label1'>Choose app file</label><br />
+                          <div className='uploadButtons'>
+                            <input type="file" name='appfile' id='upbtn3'
                             onChange={(event)=>formik.setFieldValue("appfile",event.currentTarget.files[0])}
                             onBlur={formik.handleBlur}/><br /><br />
-                            <div id='upbtn-label'>Choose app file</div>
+                            
                             {formik.touched.appfile && formik.errors.appfile ?(
                                 <p className='text-danger errorMsg' style={{fontSize:"12px",margin:"0px",position:"relative",top:"0px"}}>
                                   {formik.errors.appfile}
