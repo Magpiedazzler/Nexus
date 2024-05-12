@@ -10,7 +10,7 @@ export default function AdminNotification() {
         setSelectedOption(e.target.value);
     }; 
   return (
-    <div>
+    <div id='addiv'>
         <h1 id='adt12'>Notification</h1><br /><br />
         <form onSubmit="" id="adform12">
             <div  id='adminnot'>
