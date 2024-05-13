@@ -1,7 +1,7 @@
 import React,{useEffect,useState} from 'react'
 import './Header.css'
 import {Link} from 'react-router-dom'
-//import {userHeader} from '../../../Services/userApi'
+import {userHeader} from '../../../Services/userApi'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { setUserDetails } from '../../../Features/setUser'
@@ -19,15 +19,15 @@ export default function Header() {
         navigate("/login");
     };
 
-    // useEffect(()=>{
-    //     userHeader().then((response)=>{
-    //         console.log(response)
-    //         if(response.data.status){
-    //             setData(response.data.user)
-    //             dispatch(setUserDetails(response.data.user));
-    //         }
-    //     });
-    // },[]);
+    useEffect(()=>{
+        userHeader().then((response)=>{
+            console.log(response)
+            if(response.data.status){
+                setData(response.data.user)
+                dispatch(setUserDetails(response.data.user));
+            }
+        });
+    },[]);
 
     const handleLoginClick=()=>{
         navigate("/login");

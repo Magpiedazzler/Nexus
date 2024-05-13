@@ -44,14 +44,14 @@
     left: 0px;  
     border: 1px solid black;
 }
-#appname,#devname,#publname,#category{
+#appname,#devname,#publname,#category,#os{
     width: 350px;
     height: 35px;
     background-color: transparent;
     border: none;
     color: #EEEEEE;
 }
-#devname,#publname,#category{
+#devname,#publname,#category,#os{
     position: relative;
     top: -40px;
 }
@@ -102,7 +102,7 @@
     padding-left: 40px;
     padding-top: 20px;
 }
-#category option{
+#category option,#os option{
     background-color: #31363F;
     color: #EEEEEE;
 

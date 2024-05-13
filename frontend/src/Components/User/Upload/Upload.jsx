@@ -18,6 +18,7 @@ export default function Upload() {
     devname:"",
     publname:"",
     category:"",
+    os:"",
     appicon:"",
     screenshots:"",
     appfile:"",
@@ -48,6 +49,8 @@ export default function Upload() {
       .matches(/^[A-Za-z]+$/,"* Name must only contain charecters"),
     category:Yup.string()
       .required("* This field is required"),
+    os:Yup.string()
+      .required("This field is required"),
     appicon:Yup.mixed()
       .test("fileType", "Unsupported file type", (value)=>{
         if(!value) return false;
@@ -158,6 +161,19 @@ export default function Upload() {
                             {formik.touched.category && formik.errors.category ?(
                               <p className='text-danger errorMsg' style={{fontSize:"12px",margin:"0px",position:"relative",top:"-90px"}}>
                                 {formik.errors.category}
+                              </p>
+                            ):null}
+                            <select name="os" id="os"
+                          onBlur={formik.handleBlur}
+                          onChange={formik.handleChange}
+                          value={formik.values.os}>
+                          <option value="">Choose OS</option>
+                            <option value="Productivity">Windows</option>
+                            <option value="Social Networking">Linux</option>
+                            <option value="Entertainment">MAC</option></select><br /><hr id='hr1'/><br />
+                            {formik.touched.os && formik.errors.os ?(
+                              <p className='text-danger errorMsg' style={{fontSize:"12px",margin:"0px",position:"relative",top:"-90px"}}>
+                                {formik.errors.os}
                               </p>
                             ):null}
                         </div>

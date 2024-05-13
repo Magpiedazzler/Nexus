@@ -15,6 +15,6 @@ export const appreg=(values)=>{
     return userInstance.post(`/upload`,{...values},{headers:{"content-Type":"multipart/form-data"}})
 }
 
-// export const userHeader=()=>{
-//     return userInstance.get("/header")
-// }
+export const userHeader=()=>{
+    return userInstance.get("/header")
+}
