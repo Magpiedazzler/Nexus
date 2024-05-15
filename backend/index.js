@@ -10,6 +10,7 @@ app.use(express.json())
 
 dbConfigFile.dbConnect()
 
+app.use("/img",express.static(__dirname+"/public/images"));
 app.use('/',userRoutes);
 
 app.listen(process.env.PORT,()=>{console.log(`Server is running on ${process.env.PORT}`);})

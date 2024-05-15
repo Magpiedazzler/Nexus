@@ -3,10 +3,11 @@ const userModel=require("../Models/userModel")
 const path=require("path")
 const bcrypt=require('bcrypt')
 const jwt=require('jsonwebtoken')
+const userFeedbackModel = require("../Models/userFeedbackModel")
 const maxAge=24*60*60
 
 const createToken=(id)=>{
-    return jwt.sign({id},process.env.JWT_SECRETE_KEY,{
+    return jwt.sign({id},"JWT",{
         expiresIn:maxAge,
     });
 };
@@ -70,6 +71,7 @@ module.exports.login=async(req,res)=>{
 
 module.exports.appUpload=async(req,res)=>{
     try {
+        const userId=req?.params?.userId
         const extractImageUrl = (fullPath) => {
           const relativePath = path.relative("public/images", fullPath);
           const imageUrl = relativePath.replace(/\\/g, "/");
@@ -80,9 +82,7 @@ module.exports.appUpload=async(req,res)=>{
         const appIcon=req.files.appIcon.map(file => file.path)
         const appScreenshots=req.files.appScreenshots.map(file => file.path)
     
-        console.log(extractImageUrl(appFile[0]),"HEhehehehe");
-        console.log(req.body,"this is body");
-       
+               
         const applicationDetails=new appModel({
             userId:userId,
             appName:req.body.appName,
@@ -91,15 +91,16 @@ module.exports.appUpload=async(req,res)=>{
             devName:req.body.devloperName,
             publisherName:req.body.publisherName,
             category:req.body.category,
+            OS:req.body.OS,
             appScreenshots:extractImageUrl(appScreenshots[0]),
             appIcon:extractImageUrl(appIcon[0]),
         })
         const data=await applicationDetails.save()
-        console.log(data,"!!!!!!!!!");
-        return res.json({message:"App uploaded successfully",status:true})
+        return res.json({message:"App uploaded successfully",status:true,data})
         
       } catch (error) {
         console.log(error);
+        return res.json({message:"App uploaded Failed",status:false})
       }
 };
 
@@ -112,3 +113,24 @@ module.exports.Header=async(req,res)=>{
         return res.json({message:"Internal server error", status:false});
     }
 };
+
+module.exports.userFeedback=async(req,res,next)=>{
+    try{
+        const feedbackExists=await userFeedbackModel.findOne({userId:req.params.userId})
+        if(feedbackExists){
+            return res.json({message:"Your feedback already exists",status:false})
+        }else{
+            const userFeedback=new userFeedbackModel({
+                userId:req.params.userId,
+                feedbackStatus:req.body.feedbackStatus,
+                category:req.body.category,
+                feedbackComment:req.body.comments.comments,
+            });
+            const data=await userFeedback.save()
+            return res.json({message:"Thank you for your valuable feedback",status:true})
+        }
+    }catch(error){
+        console.log(error)
+        return res.json({message:"Unable to send", status:false})
+    }
+}

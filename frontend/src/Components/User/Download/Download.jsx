@@ -35,6 +35,7 @@ export default function Download() {
                     </div>
                     <div align='center'>
                         <button id='btn3' align='center'><i class="bi bi-flag" id='flag'></i>Report app</button>
+                        <button id='btn4' align='center'><i class="bi bi-heart" id='flag'></i>Add to wishlist</button>
                     </div>
                 </div>
                 <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6" id='third_div'>

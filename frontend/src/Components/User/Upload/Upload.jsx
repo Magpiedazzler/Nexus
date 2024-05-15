@@ -1,57 +1,52 @@
 import React from 'react'
 import './Upload.css'
-import {Link,useNavigate} from "react-router-dom"
+//import {Link,useNavigate} from "react-router-dom"
 import * as Yup from 'yup'
 import {useFormik} from 'formik'
 import { appreg } from '../../../Services/userApi'
+import { useSelector } from 'react-redux'
+import { toast } from 'react-toastify'
 
 export default function Upload() {
 
   const supportedExtentionRegex=/\.(exe|dmg|app|apk|deb|rpm|msi)$/i;
   const supportedImageExtentionRegex=/\.(jpg|jpeg|png|avif)$/i;
-
-  const navigate=useNavigate()
+  const userIdentity=useSelector((state)=>state?.user?.value?._id);
 
   const initialValues={
-    appname:"",
-    description:"",
-    devname:"",
-    publname:"",
-    category:"",
-    os:"",
-    appicon:"",
-    screenshots:"",
-    appfile:"",
+    appName:"",
+    appDescription:"",
+    developerName:"",
+    publisherName:"",
+    Category:"",
+    OS:"",
+    appIcon:null,
+    appScreenshots:null,
+    appfile:null,
   };
 
   const validationSchema=Yup.object({
-    appname:Yup.string()
-      .strict(true)
-      .trim("* Name must not contain white space")
-      .test(
-        "* no-whitespace",
-        "* Name must not contain white space",
-        (value)=>!/\s/.test(value)
-      )
+    appName:Yup.string()
       .min(3,"* Name must be atleast 3 charecters long")
       .matches(/^[A-Za-z]+$/,"* Name must only contain charecters")
       .required("* This field is required"),
-    description:Yup.string()
+    appDescription:Yup.string()
       .min(15,"* Password must be atleast 15 charecters long")
       .required("* This field is required"),
-    devname:Yup.string()
+    developerName:Yup.string()
       .required("* This field is required")
-      .min(3,"* Name must be atleast 3 charecters long")
-      .matches(/^[A-Za-z]+$/,"* Name must only contain charecters"),
-    publname:Yup.string()
+      .min(3,"* Name must be atleast 3 charecters long"),
+      //.matches(/^[A-Za-z]+$/,"* Name must only contain charecters"),
+    publisherName:Yup.string()
       .required("* This field is required")
-      .min(3,"* Name must be atleast 3 charecters long")
-      .matches(/^[A-Za-z]+$/,"* Name must only contain charecters"),
-    category:Yup.string()
+      .min(3,"* Name must be atleast 3 charecters long"),
+      //.matches(/^[A-Za-z]+$/,"* Name must only contain charecters"),
+    Category:Yup.string()
+      .min(3, "*Name must be at least 3 characters long")
       .required("* This field is required"),
-    os:Yup.string()
+    OS:Yup.string()
       .required("This field is required"),
-    appicon:Yup.mixed()
+    appIcon:Yup.mixed()
       .test("fileType", "Unsupported file type", (value)=>{
         if(!value) return false;
         return supportedImageExtentionRegex.test(value.name);
@@ -63,7 +58,7 @@ export default function Upload() {
         if(!value)  return false;
         return supportedExtentionRegex.test(value.name);
       }),
-    screenshots:Yup.mixed()
+    appScreenshots:Yup.mixed()
     .test("fileType", "Unsupported file type", (value)=>{
       if(!value) return false;
       return supportedImageExtentionRegex.test(value.name);
@@ -72,16 +67,31 @@ export default function Upload() {
   });
 
   const onSubmit=async(values,{resetForm})=>{
-    console.log(values);
-    const data=await appreg(values);
-    console.log(data);
-    if(data.data.status){
-  //     toast.success("Login successfully")
-      resetForm()
-      navigate("/login")
+    console.log(values,"1212121212")
+    const {data}=await appreg(values,userIdentity);
+    if(data?.status){
+      resetForm();
+      const appApk=document.getElementById("appfile");
+      const appShots=document.getElementById("screenshots");
+      const appIcon=document.getElementById("appicon");
+      if(appApk && appShots && appIcon){
+        appApk.value="";
+        appShots.value="";
+        appIcon.value="";
+      }
+      toast.success(data?.message);
     }else{
-  //     toast.console.error("Unable to login");
+      toast.error(data?.message);
     }
+    // const data=await appreg(values);
+    // console.log(data);
+    // if(data.data.status){
+    //   toast.success("Login successfully")
+    //   resetForm()
+    //   navigate("/login")
+    // }else{
+    //   toast.console.error("Unable to login");
+    // }
   };
 
   const formik =useFormik({
@@ -106,47 +116,47 @@ export default function Upload() {
                           <input type="text" name='appname' id='appname' placeholder='Application Name' 
                           onBlur={formik.handleBlur}
                           onChange={formik.handleChange}
-                          value={formik.values.appname}/>
+                          value={formik.values.appName}/>
                           <br /><hr id='hr1_1'/><br />
-                          {formik.touched.appname && formik.errors.appname ?(
+                          {formik.touched.appName && formik.errors.appName ?(
                             <p className='text-danger errorMsg' style={{fontSize:"12px",margin:"0px",position:"relative",top:"-50px"}}>
-                              {formik.errors.appname}
+                              {formik.errors.appName}
                             </p>
                           ):null}
                           <textarea name="description" id="desc" cols="30" rows="10" placeholder='Description of the Application'
                           onBlur={formik.handleBlur}
                           onChange={formik.handleChange}
-                          value={formik.values.description}></textarea>
+                          value={formik.values.appDescription}></textarea>
                           <br /><hr id='hr2'/><br />
-                          {formik.touched.description && formik.errors.description ?(
+                          {formik.touched.appDescription && formik.errors.appDescription ?(
                             <p className='text-danger errorMsg' style={{fontSize:"12px",margin:"0px",position:"relative",top:"-75px"}}>
-                              {formik.errors.description}
+                              {formik.errors.appDescription}
                             </p>
                           ):null}
                           <input type="text" name="devname" id="devname" placeholder='Developer name'
                           onBlur={formik.handleBlur}
                           onChange={formik.handleChange}
-                          value={formik.values.devname}/>
+                          value={formik.values.developerName}/>
                           <br /><hr id='hr1'/><br />
-                          {formik.touched.devname && formik.errors.devname ?(
+                          {formik.touched.developerName && formik.errors.developerName ?(
                             <p className='text-danger errorMsg' style={{fontSize:"12px",margin:"0px",position:"relative",top:"-90px"}}>
-                              {formik.errors.devname}
+                              {formik.errors.developerName}
                             </p>
                           ):null}
                           <input type="text" name="publname" id="publname" placeholder='Publisher name'
                           onBlur={formik.handleBlur}
                           onChange={formik.handleChange}
-                          value={formik.values.publname}/>
+                          value={formik.values.publisherName}/>
                           <br /><hr id='hr1'/><br />
-                          {formik.touched.publname && formik.errors.publname ?(
+                          {formik.touched.publisherName && formik.errors.publisherName ?(
                             <p className='text-danger errorMsg' style={{fontSize:"12px",margin:"0px",position:"relative",top:"-90px"}}>
-                              {formik.errors.publname}
+                              {formik.errors.publisherName}
                             </p>
                           ):null}
                           <select name="category" id="category"
                           onBlur={formik.handleBlur}
                           onChange={formik.handleChange}
-                          value={formik.values.category}>
+                          value={formik.values.Category}>
                           <option value="">Choose category</option>
                             <option value="Productivity">Productivity</option>
                             <option value="Social Networking">Social Networking</option>
@@ -158,22 +168,22 @@ export default function Upload() {
                             <option value="Finance">Finance</option>
                             <option value="Shopping">Shopping</option>
                             <option value="Utilities">Utilities</option></select><br /><hr id='hr1'/><br />
-                            {formik.touched.category && formik.errors.category ?(
+                            {formik.touched.Category && formik.errors.Category ?(
                               <p className='text-danger errorMsg' style={{fontSize:"12px",margin:"0px",position:"relative",top:"-90px"}}>
-                                {formik.errors.category}
+                                {formik.errors.Category}
                               </p>
                             ):null}
                             <select name="os" id="os"
                           onBlur={formik.handleBlur}
                           onChange={formik.handleChange}
-                          value={formik.values.os}>
+                          value={formik.values.OS}>
                           <option value="">Choose OS</option>
-                            <option value="Productivity">Windows</option>
-                            <option value="Social Networking">Linux</option>
-                            <option value="Entertainment">MAC</option></select><br /><hr id='hr1'/><br />
-                            {formik.touched.os && formik.errors.os ?(
+                            <option value="Windows">Windows</option>
+                            <option value="Linux">Linux</option>
+                            <option value="MAC">MAC</option></select><br /><hr id='hr1'/><br />
+                            {formik.touched.OS && formik.errors.OS ?(
                               <p className='text-danger errorMsg' style={{fontSize:"12px",margin:"0px",position:"relative",top:"-90px"}}>
-                                {formik.errors.os}
+                                {formik.errors.OS}
                               </p>
                             ):null}
                         </div>
@@ -184,9 +194,9 @@ export default function Upload() {
                             <input type="file"  name='appicon' id='upbtn1'
                             onChange={(event)=>formik.setFieldValue("appicon",event.currentTarget.files[0])}
                             onBlur={formik.handleBlur}/><br /><br />
-                            {formik.touched.appicon && formik.errors.appicon ?(
+                            {formik.touched.appIcon && formik.errors.appIcon ?(
                                 <p className='text-danger errorMsg' style={{fontSize:"12px",margin:"0px",position:"relative",top:"0px"}}>
-                                  {formik.errors.appicon}
+                                  {formik.errors.appIcon}
                                 </p>
                               ):null}
                           </div><br />
@@ -195,9 +205,9 @@ export default function Upload() {
                             <input type="file" name='screenshots' id='upbtn2'
                             onChange={(event)=>formik.setFieldValue("screenshots",event.currentTarget.files[0])}
                             onBlur={formik.handleBlur}/><br /><br />
-                            {formik.touched.screenshots && formik.errors.screenshots ?(
+                            {formik.touched.appScreenshots && formik.errors.appScreenshots ?(
                                 <p className='text-danger errorMsg' style={{fontSize:"12px",margin:"0px",position:"relative",top:"0px"}}>
-                                  {formik.errors.screenshots}
+                                  {formik.errors.appScreenshots}
                                 </p>
                               ):null}
                           </div><br />

@@ -1,5 +1,6 @@
 import React from 'react'
 import './ViewFeedback.css'
+import { Link } from 'react-router-dom'
 
 export default function ViewFeedback() {
   return (
@@ -13,7 +14,7 @@ export default function ViewFeedback() {
                             <div id='box3'>
                                 <input type="text" id='vft1' value={'Account name'} readOnly/>
                                 <input type="text" id='vft2' value={'Feedback Category'} readOnly/>
-                                <input type="button" id='vfb1' value={'View Details'}/>
+                                <Link to='../../admin/feedback'><input type="button" id='vfb1' value={'View Details'}/></Link>
                             </div>
                     </div>
                 </div>

@@ -1,5 +1,5 @@
 const jwt = require("jsonwebtoken");
-const userModel = require("../Model/userModel");
+const userModel = require("../Models/userModel")
 
 module.exports = async (req, res, next) => {
   try {
@@ -14,8 +14,9 @@ module.exports = async (req, res, next) => {
         message: "no auth token",
       });
     const decode = jwt.verify(authToken, "JWT");
-
-    const user = await userModel.findOne({ _id: decode.id });
+    const userId=decode.id
+    const user = await userModel.findOne({_id:userId});
+    console.log(user)
     if (!user) {
       return res.json({
         message: "Unauthorized access",

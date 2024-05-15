@@ -1,5 +1,6 @@
 import React from 'react'
 import "./Applications.css"
+import { Link } from 'react-router-dom'
 
 export default function Applications() {
   return (
@@ -37,11 +38,11 @@ export default function Applications() {
                     </div>
                     <div class="card" id='hdiv'>
                         <img src="" id='himg' class="card-img-top" alt="..."/>
-                        <div class="card-body">
+                        <Link to='../install'><div class="card-body">
                             <h5 class="card-title" id='hh'>App Name</h5><br />
                             <p class="card-text">ratings</p>
                             <button id='hb'><i class="bi bi-download" id='hi'></i>Download</button>
-                        </div>
+                        </div></Link>
                     </div>
             </div>
         </div>

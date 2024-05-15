@@ -1,10 +1,11 @@
 import React,{useEffect,useState} from 'react'
 import './Header.css'
 import {Link} from 'react-router-dom'
-import {userHeader} from '../../../Services/userApi'
+//import {userHeader} from '../../../Services/userApi'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { setUserDetails } from '../../../Features/setUser'
+import { userHeader } from '../../../Services/userApi'
 
 
 export default function Header() {

@@ -2,11 +2,16 @@ const mongoose=require("mongoose")
 const bcrypt =require("bcrypt")
 
 const appSchema=new mongoose.Schema({
+    userId:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:"user",
+        required:true
+    },
     appName:{
         type:String,
         required:true,
     },
-    appDesc:{
+    appDescription:{
         type:String,
         required:true,
     },
@@ -18,9 +23,13 @@ const appSchema=new mongoose.Schema({
         type:String,
         required:true,
     },
-    appCategory:{
+    Category:{
         type:String,
         required:true,
+    },
+    OS:{
+        type:String,
+        required:true
     },
     appIcon:{
         type:String,
@@ -30,7 +39,7 @@ const appSchema=new mongoose.Schema({
         type:String,
         required:true,
     },
-    appFile:{
+    apkFile:{
         type:String,
         required:true,
     },
